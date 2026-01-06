@@ -3,18 +3,28 @@
 
 #include <stdio.h>
 
-typedef struct intVector {
-  int* vec;
+// All the supported data types
+// To allocate proper amount of memory 
+// we map enum member to type_size array (declared in vectors.c)
+enum DataTypes {
+  INT,
+  FLOAT,
+  LONG
+};
+
+typedef struct Vector {
+  enum DataTypes data_type;
+  void* data;
   size_t size;
   size_t capacity;
-} intVector;
+} Vector;
 
-intVector* init_int_vector(size_t capacity);
-void int_vector_push_back(intVector* vector, int val);
-int get_int_at(const intVector* vector, size_t index, int* element);
-void print_int_vector(const intVector* vector);
-size_t get_size(const intVector* vector);
-void free_int_vector(intVector* vector);
+Vector* init_vector(enum DataTypes data_type, size_t initial_capacity);
+void push_back(Vector* vector, ...);
+void print_vector(const Vector* vector);
+int get_element_at(const Vector* vector, size_t index, void* element);
+size_t get_size(const Vector* vector);
+void free_vector(Vector* vector);
 
 // Add int_vector_pop_back
 // Add int_vector_reserve
