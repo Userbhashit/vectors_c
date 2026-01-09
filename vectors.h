@@ -19,6 +19,4 @@ size_t get_size(const Vector* vector);
 void reverse_vector(Vector* vector);
 void free_vector(Vector* vector);
 
-// Add int_vector_shrink_to_fit
-
 #endif
