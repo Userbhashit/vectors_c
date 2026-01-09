@@ -39,3 +39,4 @@ Run tests:
 ```bash
 ./test
 ```
+**Fact:** The final idea to use generic pointer (void*) came from book "The C Programming Language" by Brian Kernighan and Dennis Ritchie so while reading code if it felt like you have seen similar style code its probably from K&R.
